@@ -228,6 +228,11 @@ public class CalculadoraMaxima extends javax.swing.JFrame {
         jbdot.setForeground(new java.awt.Color(255, 255, 255));
         jbdot.setText(".");
         jbdot.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbdot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbdotActionPerformed(evt);
+            }
+        });
 
         jbCalc.setBackground(new java.awt.Color(51, 51, 51));
         jbCalc.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -531,6 +536,13 @@ public class CalculadoraMaxima extends javax.swing.JFrame {
         ultimoOp = "";
         jbResult.setText("");
     }//GEN-LAST:event_jbClearActionPerformed
+
+    private void jbdotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbdotActionPerformed
+        String ultimoResultado = jbResult.getText();
+        ultimoResultado += jbdot.getText();
+        jbResult.setText(ultimoResultado);
+        ultimoD = Double.parseDouble(jbResult.getText());
+    }//GEN-LAST:event_jbdotActionPerformed
 
     private void calcularDivisao(){
         
