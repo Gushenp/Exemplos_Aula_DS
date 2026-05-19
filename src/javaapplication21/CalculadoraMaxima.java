@@ -32,7 +32,8 @@ public class CalculadoraMaxima extends javax.swing.JFrame {
         jpBG = new javax.swing.JPanel();
         jpCorpo = new javax.swing.JPanel();
         jpTela = new javax.swing.JPanel();
-        jbResult = new javax.swing.JLabel();
+        jbUltimoR = new javax.swing.JLabel();
+        jbResult1 = new javax.swing.JLabel();
         jpTeclado = new javax.swing.JPanel();
         jb7 = new javax.swing.JButton();
         jb9 = new javax.swing.JButton();
@@ -60,9 +61,13 @@ public class CalculadoraMaxima extends javax.swing.JFrame {
 
         jpTela.setBackground(new java.awt.Color(204, 204, 204));
 
-        jbResult.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jbResult.setForeground(new java.awt.Color(51, 51, 51));
-        jbResult.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jbUltimoR.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jbUltimoR.setForeground(new java.awt.Color(51, 51, 51));
+        jbUltimoR.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+
+        jbResult1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jbResult1.setForeground(new java.awt.Color(51, 51, 51));
+        jbResult1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout jpTelaLayout = new javax.swing.GroupLayout(jpTela);
         jpTela.setLayout(jpTelaLayout);
@@ -70,12 +75,21 @@ public class CalculadoraMaxima extends javax.swing.JFrame {
             jpTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpTelaLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
-                .addComponent(jbResult, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jpTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jbResult1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpTelaLayout.createSequentialGroup()
+                        .addComponent(jbUltimoR, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(13, 13, 13)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpTelaLayout.setVerticalGroup(
             jpTelaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jbResult, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+            .addGroup(jpTelaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jbUltimoR, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jbResult1, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
+                .addGap(13, 13, 13))
         );
 
         jpTeclado.setBackground(new java.awt.Color(153, 153, 153));
@@ -373,14 +387,14 @@ public class CalculadoraMaxima extends javax.swing.JFrame {
             .addGroup(jpBGLayout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jpCorpo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jpBGLayout.setVerticalGroup(
             jpBGLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpBGLayout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jpCorpo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -399,7 +413,8 @@ public class CalculadoraMaxima extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCalcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCalcActionPerformed
-
+        jbUltimoR.setText(String.valueOf(resultado));
+        
         if (ultimoOp.equals("+")){
             
             jbsumActionPerformed(evt);
@@ -422,92 +437,92 @@ public class CalculadoraMaxima extends javax.swing.JFrame {
             ultimoD = 0;
         }
         
-        jbResult.setText(String.valueOf(resultado));
+        jbUltimoR.setText(String.valueOf(resultado));
    
     }//GEN-LAST:event_jbCalcActionPerformed
 
     private void jb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb1ActionPerformed
-        String ultimoResultado = jbResult.getText();
+        String ultimoResultado = jbUltimoR.getText();
         ultimoResultado += jb1.getText();
-        jbResult.setText(ultimoResultado);
-        ultimoD = Double.parseDouble(jbResult.getText());
+        jbUltimoR.setText(ultimoResultado);
+        ultimoD = Double.parseDouble(jbUltimoR.getText());
     }//GEN-LAST:event_jb1ActionPerformed
 
     private void jb2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb2ActionPerformed
-        String ultimoResultado = jbResult.getText();
+        String ultimoResultado = jbUltimoR.getText();
         ultimoResultado += jb2.getText();
-        jbResult.setText(ultimoResultado);
-        ultimoD = Double.parseDouble(jbResult.getText());
+        jbUltimoR.setText(ultimoResultado);
+        ultimoD = Double.parseDouble(jbUltimoR.getText());
     }//GEN-LAST:event_jb2ActionPerformed
 
     private void jb3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb3ActionPerformed
-        String ultimoResultado = jbResult.getText();
+        String ultimoResultado = jbUltimoR.getText();
         ultimoResultado += jb3.getText();
-        jbResult.setText(ultimoResultado);
-        ultimoD = Double.parseDouble(jbResult.getText());
+        jbUltimoR.setText(ultimoResultado);
+        ultimoD = Double.parseDouble(jbUltimoR.getText());
     }//GEN-LAST:event_jb3ActionPerformed
 
     private void jb6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb6ActionPerformed
-        String ultimoResultado = jbResult.getText();
+        String ultimoResultado = jbUltimoR.getText();
         ultimoResultado += jb6.getText();
-        jbResult.setText(ultimoResultado);
-        ultimoD = Double.parseDouble(jbResult.getText());
+        jbUltimoR.setText(ultimoResultado);
+        ultimoD = Double.parseDouble(jbUltimoR.getText());
     }//GEN-LAST:event_jb6ActionPerformed
 
     private void jb4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb4ActionPerformed
-        String ultimoResultado = jbResult.getText();
+        String ultimoResultado = jbUltimoR.getText();
         ultimoResultado += jb4.getText();
-        jbResult.setText(ultimoResultado);
-        ultimoD = Double.parseDouble(jbResult.getText());
+        jbUltimoR.setText(ultimoResultado);
+        ultimoD = Double.parseDouble(jbUltimoR.getText());
     }//GEN-LAST:event_jb4ActionPerformed
 
     private void jb5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb5ActionPerformed
-        String ultimoResultado = jbResult.getText();
+        String ultimoResultado = jbUltimoR.getText();
         ultimoResultado += jb5.getText();
-        jbResult.setText(ultimoResultado);
-        ultimoD = Double.parseDouble(jbResult.getText());
+        jbUltimoR.setText(ultimoResultado);
+        ultimoD = Double.parseDouble(jbUltimoR.getText());
     }//GEN-LAST:event_jb5ActionPerformed
 
     private void jb7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb7ActionPerformed
-        String ultimoResultado = jbResult.getText();
+        String ultimoResultado = jbUltimoR.getText();
         ultimoResultado += jb2.getText();
-        jbResult.setText(ultimoResultado);
-        ultimoD = Double.parseDouble(jbResult.getText());
+        jbUltimoR.setText(ultimoResultado);
+        ultimoD = Double.parseDouble(jbUltimoR.getText());
     }//GEN-LAST:event_jb7ActionPerformed
 
     private void jb8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb8ActionPerformed
-        String ultimoResultado = jbResult.getText();
+        String ultimoResultado = jbUltimoR.getText();
         ultimoResultado += jb8.getText();
-        jbResult.setText(ultimoResultado);
-        ultimoD = Double.parseDouble(jbResult.getText());
+        jbUltimoR.setText(ultimoResultado);
+        ultimoD = Double.parseDouble(jbUltimoR.getText());
     }//GEN-LAST:event_jb8ActionPerformed
 
     private void jb9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb9ActionPerformed
-        String ultimoResultado = jbResult.getText();
+        String ultimoResultado = jbUltimoR.getText();
         ultimoResultado += jb9.getText();
-        jbResult.setText(ultimoResultado);
-        ultimoD = Double.parseDouble(jbResult.getText());
+        jbUltimoR.setText(ultimoResultado);
+        ultimoD = Double.parseDouble(jbUltimoR.getText());
     }//GEN-LAST:event_jb9ActionPerformed
 
     private void jb0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb0ActionPerformed
-        String ultimoResultado = jbResult.getText();
+        String ultimoResultado = jbUltimoR.getText();
         ultimoResultado += jb0.getText();
-        jbResult.setText(ultimoResultado);
-        ultimoD = Double.parseDouble(jbResult.getText());
+        jbUltimoR.setText(ultimoResultado);
+        ultimoD = Double.parseDouble(jbUltimoR.getText());
     }//GEN-LAST:event_jb0ActionPerformed
 
     private void jbsumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbsumActionPerformed
 
         resultado += ultimoD;   
         System.out.println(resultado);
-        jbResult.setText("");
+        jbUltimoR.setText("");
         ultimoOp = "+";
     }//GEN-LAST:event_jbsumActionPerformed
 
     private void jbminusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbminusActionPerformed
         resultado -= ultimoD;
         System.out.println(resultado);
-        jbResult.setText("");
+        jbUltimoR.setText("");
         ultimoOp = "-";
     }//GEN-LAST:event_jbminusActionPerformed
 
@@ -516,7 +531,7 @@ public class CalculadoraMaxima extends javax.swing.JFrame {
             resultado = ultimoD;
         }
         
-        jbResult.setText("");
+        jbUltimoR.setText("");
         ultimoOp = "*";
         
     }//GEN-LAST:event_jbtimesActionPerformed
@@ -526,7 +541,7 @@ public class CalculadoraMaxima extends javax.swing.JFrame {
             resultado = ultimoD;
         }
         
-        jbResult.setText("");
+        jbUltimoR.setText("");
         ultimoOp = "/";
     }//GEN-LAST:event_jbdividerActionPerformed
 
@@ -534,14 +549,14 @@ public class CalculadoraMaxima extends javax.swing.JFrame {
         resultado = 0;
         ultimoD = 0;
         ultimoOp = "";
-        jbResult.setText("");
+        jbUltimoR.setText("");
     }//GEN-LAST:event_jbClearActionPerformed
 
     private void jbdotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbdotActionPerformed
-        String ultimoResultado = jbResult.getText();
+        String ultimoResultado = jbUltimoR.getText();
         ultimoResultado += jbdot.getText();
-        jbResult.setText(ultimoResultado);
-        ultimoD = Double.parseDouble(jbResult.getText());
+        jbUltimoR.setText(ultimoResultado);
+        ultimoD = Double.parseDouble(jbUltimoR.getText());
     }//GEN-LAST:event_jbdotActionPerformed
 
     private void calcularDivisao(){
@@ -610,7 +625,8 @@ public class CalculadoraMaxima extends javax.swing.JFrame {
     private javax.swing.JButton jb9;
     private javax.swing.JButton jbCalc;
     private javax.swing.JButton jbClear;
-    private javax.swing.JLabel jbResult;
+    private javax.swing.JLabel jbResult1;
+    private javax.swing.JLabel jbUltimoR;
     private javax.swing.JButton jbdivider;
     private javax.swing.JButton jbdot;
     private javax.swing.JButton jbminus;

@@ -43,6 +43,7 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLBOT = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jlresult = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -202,17 +203,26 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jlresult.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jlresult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlresult, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(146, 146, 146))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jlresult, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 34, Short.MAX_VALUE))
         );
 
         pack();
@@ -294,21 +304,22 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
         System.out.println(bot);
         
         if(user.equals("pedra") && bot.equals("tesoura")){
-            System.out.println("Usuário ganhou");
             jLUSER.setText("Pedra");
             jLBOT.setText("Tesoura");       
+            jlresult.setText("O usuário ganhou!");
         } else if (user.equals("papel") && bot.equals("pedra")){
             jLUSER.setText("Papel");
             jLBOT.setText("Pedra"); 
-            System.out.println("Usuário ganhou");
+            jlresult.setText("O usuário ganhou!");
         } else if (user.equals("tesoura") && bot.equals("pedra")){
             jLUSER.setText("Tesoura");
             jLBOT.setText("Pedra"); 
-            System.out.println("Usuário ganhou");
+            jlresult.setText("O usuário ganhou!");
         } else if(user.equals(bot)){
             System.out.println("EMPATE");
+            jlresult.setText("Temos um empate!");
         } else {
-            System.out.println("O BOT ganhou!");
+            jlresult.setText("O bot ganhou!");
         }
     }
     
@@ -327,5 +338,6 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel jlresult;
     // End of variables declaration//GEN-END:variables
 }
