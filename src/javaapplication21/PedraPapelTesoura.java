@@ -6,6 +6,7 @@ package javaapplication21;
 
 import java.awt.Color;
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,132 +30,142 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        grupoescolhas = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jPTtitle = new javax.swing.JPanel();
         jPBody = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jBPedra = new javax.swing.JButton();
-        jBPapel = new javax.swing.JButton();
-        jBTesoura = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jPedra = new javax.swing.JRadioButton();
+        jPapel = new javax.swing.JRadioButton();
+        jTesoura = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLUSER = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLBOT = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jlresult = new javax.swing.JLabel();
+        jStart = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        juserchoicee = new javax.swing.JLabel();
+        jbotchoicee = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jPBody.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Selecione sua jogada: ");
 
-        jBPedra.setText("Pedra");
-        jBPedra.addActionListener(new java.awt.event.ActionListener() {
+        grupoescolhas.add(jPedra);
+        jPedra.setText("Pedra");
+
+        grupoescolhas.add(jPapel);
+        jPapel.setText("Papel");
+
+        grupoescolhas.add(jTesoura);
+        jTesoura.setText("Tesoura");
+
+        jLabel3.setText("User:");
+
+        jlresult.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jlresult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jStart.setText("Jogar");
+        jStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBPedraActionPerformed(evt);
+                jStartActionPerformed(evt);
             }
         });
-
-        jBPapel.setText("Papel");
-        jBPapel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBPapelActionPerformed(evt);
-            }
-        });
-
-        jBTesoura.setText("Tesoura");
-        jBTesoura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBTesouraActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPBodyLayout = new javax.swing.GroupLayout(jPBody);
-        jPBody.setLayout(jPBodyLayout);
-        jPBodyLayout.setHorizontalGroup(
-            jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBodyLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPBodyLayout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
-                .addComponent(jBPedra)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
-                .addComponent(jBPapel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                .addComponent(jBTesoura)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-        jPBodyLayout.setVerticalGroup(
-            jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBodyLayout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addGroup(jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jBPedra)
-                    .addComponent(jBPapel)
-                    .addComponent(jBTesoura))
-                .addGap(211, 211, 211))
-        );
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel3.setText("VS");
-
-        jPanel3.setBackground(new java.awt.Color(0, 204, 204));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLUSER, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLUSER, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-        );
-
-        jPanel4.setBackground(new java.awt.Color(0, 204, 153));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLBOT, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLBOT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(28, 28, 28)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(19, 19, 19))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jlresult, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jStart)
+                        .addGap(176, 176, 176))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(62, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(61, 61, 61))
+                .addContainerGap()
+                .addComponent(jStart)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addComponent(jlresult, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
+        );
+
+        jLabel4.setText("Bot:");
+
+        juserchoicee.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        juserchoicee.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        juserchoicee.setText(" ");
+
+        jbotchoicee.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jbotchoicee.setText(" ");
+
+        javax.swing.GroupLayout jPBodyLayout = new javax.swing.GroupLayout(jPBody);
+        jPBody.setLayout(jPBodyLayout);
+        jPBodyLayout.setHorizontalGroup(
+            jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPBodyLayout.createSequentialGroup()
+                .addGroup(jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBodyLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addComponent(jPedra))
+                        .addGroup(jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPBodyLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jPapel)
+                                .addGap(100, 100, 100)
+                                .addComponent(jTesoura)
+                                .addGap(23, 23, 23))
+                            .addGroup(jPBodyLayout.createSequentialGroup()
+                                .addGap(189, 189, 189)
+                                .addComponent(jLabel4)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBodyLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2))
+                    .addGroup(jPBodyLayout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(juserchoicee, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57)
+                        .addComponent(jbotchoicee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(23, 23, 23)))
+                .addContainerGap())
+            .addGroup(jPBodyLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPBodyLayout.setVerticalGroup(
+            jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBodyLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addGroup(jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jPedra)
+                    .addComponent(jPapel)
+                    .addComponent(jTesoura))
+                .addGap(51, 51, 51)
+                .addGroup(jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(juserchoicee)
+                    .addComponent(jbotchoicee))
+                .addGap(32, 32, 32)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(196, 196, 196))
         );
 
         javax.swing.GroupLayout jPTtitleLayout = new javax.swing.GroupLayout(jPTtitle);
@@ -162,19 +173,15 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
         jPTtitleLayout.setHorizontalGroup(
             jPTtitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPTtitleLayout.createSequentialGroup()
-                .addContainerGap(127, Short.MAX_VALUE)
-                .addGroup(jPTtitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPBody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(129, Short.MAX_VALUE)
+                .addComponent(jPBody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(127, Short.MAX_VALUE))
         );
         jPTtitleLayout.setVerticalGroup(
             jPTtitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPTtitleLayout.createSequentialGroup()
-                .addGroup(jPTtitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPBody, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 177, Short.MAX_VALUE))
+                .addComponent(jPBody, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 22, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -200,48 +207,49 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPTtitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
-
-        jlresult.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jlresult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jlresult, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(146, 146, 146))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jlresult, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 34, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBTesouraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTesouraActionPerformed
-        start("tesoura");
-
-    }//GEN-LAST:event_jBTesouraActionPerformed
-
-    private void jBPedraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPedraActionPerformed
-        start("pedra");
-
-    }//GEN-LAST:event_jBPedraActionPerformed
-
-    private void jBPapelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPapelActionPerformed
-        start("papel");
-    }//GEN-LAST:event_jBPapelActionPerformed
+    private void jStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStartActionPerformed
+        String userchoice = "";
+        
+        if (jPapel.isSelected()){
+            userchoice = "papel";
+            juserchoicee.setText("Papel");
+        }
+        
+        if (jPedra.isSelected()){
+            userchoice = "pedra";
+            juserchoicee.setText("Pedra");
+        }
+        if (jTesoura.isSelected()){
+            userchoice = "tesoura";
+            juserchoicee.setText("Tesoura");
+        }
+        
+        if (userchoice.equals("")){
+            JOptionPane.showMessageDialog(null, "Você precisa escolher uma opção!\nVamos tentar novamente!");
+        } else {
+            start(userchoice);
+        }
+    }//GEN-LAST:event_jStartActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,43 +310,41 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
     }
     
     public void calculaVencedor(String user, String bot){
-        System.out.println(bot);
         
-        if(user.equals("pedra") && bot.equals("tesoura")){
-            jLUSER.setText("Pedra");
-            jLBOT.setText("Tesoura");       
+        if(user.equals("pedra") && bot.equals("tesoura")){ 
+            jbotchoicee.setText("Tesoura");
             jlresult.setText("O usuário ganhou!");
         } else if (user.equals("papel") && bot.equals("pedra")){
-            jLUSER.setText("Papel");
-            jLBOT.setText("Pedra"); 
+            jbotchoicee.setText("Pedra");
             jlresult.setText("O usuário ganhou!");
-        } else if (user.equals("tesoura") && bot.equals("pedra")){
-            jLUSER.setText("Tesoura");
-            jLBOT.setText("Pedra"); 
+        } else if (user.equals("tesoura") && bot.equals("papel")){
+            jbotchoicee.setText("Papel");
             jlresult.setText("O usuário ganhou!");
         } else if(user.equals(bot)){
-            System.out.println("EMPATE");
+            jbotchoicee.setText(user);
             jlresult.setText("Temos um empate!");
         } else {
+            jbotchoicee.setText(bot);
             jlresult.setText("O bot ganhou!");
         }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBPapel;
-    private javax.swing.JButton jBPedra;
-    private javax.swing.JButton jBTesoura;
-    private javax.swing.JLabel jLBOT;
-    private javax.swing.JLabel jLUSER;
+    private javax.swing.ButtonGroup grupoescolhas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPBody;
     private javax.swing.JPanel jPTtitle;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JRadioButton jPapel;
+    private javax.swing.JRadioButton jPedra;
+    private javax.swing.JButton jStart;
+    private javax.swing.JRadioButton jTesoura;
+    private javax.swing.JLabel jbotchoicee;
     private javax.swing.JLabel jlresult;
+    private javax.swing.JLabel juserchoicee;
     // End of variables declaration//GEN-END:variables
 }
