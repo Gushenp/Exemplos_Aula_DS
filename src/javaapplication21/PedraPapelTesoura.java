@@ -45,7 +45,7 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jlresult = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("Selecione sua jogada: ");
@@ -226,6 +226,7 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBTesouraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTesouraActionPerformed
