@@ -112,45 +112,43 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
         jPBody.setLayout(jPBodyLayout);
         jPBodyLayout.setHorizontalGroup(
             jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPBodyLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBodyLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(jPedra))
                 .addGroup(jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBodyLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jPedra))
-                        .addGroup(jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPBodyLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPapel)
-                                .addGap(100, 100, 100)
-                                .addComponent(jTesoura)
-                                .addGap(23, 23, 23))
-                            .addGroup(jPBodyLayout.createSequentialGroup()
-                                .addGap(189, 189, 189)
-                                .addComponent(jLabel4)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBodyLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2))
                     .addGroup(jPBodyLayout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(juserchoicee, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addComponent(jbotchoicee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(23, 23, 23)))
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPapel)
+                        .addGap(100, 100, 100)
+                        .addComponent(jTesoura)
+                        .addGap(29, 29, 29))
+                    .addGroup(jPBodyLayout.createSequentialGroup()
+                        .addGap(189, 189, 189)
+                        .addComponent(jLabel4)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPBodyLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(juserchoicee, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(jbotchoicee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(29, 29, 29))
             .addGroup(jPBodyLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBodyLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(125, 125, 125))
         );
         jPBodyLayout.setVerticalGroup(
             jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPBodyLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPBodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jPedra)
                     .addComponent(jPapel)
@@ -231,17 +229,17 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
         String userchoice = "";
         
         if (jPapel.isSelected()){
+            juserchoicee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPPT/papelp.png")));
             userchoice = "papel";
-            juserchoicee.setText("Papel");
         }
         
         if (jPedra.isSelected()){
+            juserchoicee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPPT/pedra.png")));
             userchoice = "pedra";
-            juserchoicee.setText("Pedra");
         }
         if (jTesoura.isSelected()){
+            juserchoicee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPPT/tesoura.png")));
             userchoice = "tesoura";
-            juserchoicee.setText("Tesoura");
         }
         
         if (userchoice.equals("")){
@@ -312,19 +310,32 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
     public void calculaVencedor(String user, String bot){
         
         if(user.equals("pedra") && bot.equals("tesoura")){ 
-            jbotchoicee.setText("Tesoura");
+            jbotchoicee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPPT/tesoura.png")));
             jlresult.setText("O usuário ganhou!");
         } else if (user.equals("papel") && bot.equals("pedra")){
-            jbotchoicee.setText("Pedra");
+            jbotchoicee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPPT/pedra.png")));
             jlresult.setText("O usuário ganhou!");
         } else if (user.equals("tesoura") && bot.equals("papel")){
-            jbotchoicee.setText("Papel");
+            jbotchoicee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPPT/papelp.png")));
             jlresult.setText("O usuário ganhou!");
         } else if(user.equals(bot)){
-            jbotchoicee.setText(user);
+            if (user.equals("pedra")){
+                jbotchoicee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPPT/pedra.png")));
+            } else if (user.equals("papel")) {
+                jbotchoicee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPPT/papelp.png")));
+            } else {
+                jbotchoicee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPPT/tesoura.png")));
+            }
+            
             jlresult.setText("Temos um empate!");
         } else {
-            jbotchoicee.setText(bot);
+            if (bot.equals("pedra")){
+                jbotchoicee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPPT/pedra.png")));
+            } else if (bot.equals("papel")) {
+                jbotchoicee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPPT/papelp.png")));
+            } else {
+                jbotchoicee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imgPPT/tesoura.png")));
+            }
             jlresult.setText("O bot ganhou!");
         }
     }
