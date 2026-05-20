@@ -53,6 +53,7 @@ public class PedraPapelTesoura extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPBody.setBackground(new java.awt.Color(235, 235, 235));
         jPBody.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
